@@ -1,0 +1,560 @@
+/*  Website Colour scheme
+        Primary colour - rgb(183, 154, 246); //purple for navigation links
+        Secondary colour - rgb(53, 38, 80); //darker purple
+        Third colour - rgb(200, 177, 250); //lighter purple
+*/
+
+
+/*---------------------Mobile Styles------------------*/
+
+/*All images and videos will be on 100% of their parent/container*/
+img, video {
+    width: 100%;
+}
+
+/*---------------------Embedded Fonts------------------*/
+@font-face {
+    font-family: '28days';   
+    src: url(../../vendors/fonts/28_Days_Later.ttf); 
+    src: url(../../vendors/fonts/28_Days_Later-webfont.eot),
+    url(../../vendors/fonts/28_Days_Later-webfont.woff),
+    url(../../vendors/fonts/28_Days_Later-webfont.woff); 
+    
+    font-weight:normal;
+    font-style: normal;
+}                                             
+
+
+/*----------------------Global Styles----------------*/
+
+/*Apply a natural box model layout to all elements*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mukta" ,sans-serif ,serif;
+    font-size: 16px;
+    color: rgb(30, 30, 30);
+    margin:0;
+    padding:0;
+}
+
+
+/*---------------------Home page styles-----------------*/
+#homeBackground {
+    position:relative;
+    background-image: url(../img/trainerHomePage.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; /*vh for height, vw for width* relative to user screen*/
+    background-attachment: fixed; /*allow the background to persist in the background while scrolling*/
+    
+}
+
+
+
+/* Positioning of the company logo on the margin*/
+.logo {
+    position:absolute;
+    width: 33px;
+    top: 0x;
+    left: 5px;
+    z-index: 115;
+    position:fixed;
+}
+
+#cartIcon { /*used for positioning for the basket icon*/
+    position:absolute;
+    width: 60%;
+    top: 5px;
+    left: 20vw;
+    text-align: center;
+    z-index: 110;
+    position:fixed;
+}
+
+/*----------------------Navigation Section*-------------------*/
+
+/*Navigation panel fixed at the top of the screen*/
+#navContainer {
+    color:rgb(255, 255, 255);
+    background-color:rgb(53, 38, 80);
+    width: 100%;
+    height:auto;
+    position:fixed; /*navigation will stay at the top while scrolling*/
+    z-index: 100; /*is layering in front of everything*/
+    border-bottom: 1px solid rgb(183,154,246);
+}
+
+nav li a, nav li{
+    width:100%;
+    height:auto;
+    display:block;
+    outline-style: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/*all anchor tags within menuItems*/
+.menuItems a{ 
+    padding:15px 5vw 15px 0px;
+    color:rgb(255, 255, 255);
+    text-align: right;
+}
+
+/*Hides the menu on mobile until the user clicks the icon*/
+.menuItems{
+    display:none;
+}
+
+/*This is styling for our basket symbol*/
+.fa-shopping-basket {
+    color: rgb(200, 177, 250);
+    font-size: 1.7em;
+
+}
+
+/*This is styling for our 3 line "indentical to" symbol*/
+.navBtn {
+    font-size: 2.5em; /*em is used for accessibility for a lot of users and browsers*/
+    color:rgb(255, 255, 255);
+    display:block;
+    z-index: 115;
+    padding: 0 6vw 0 6vw;
+    margin:0 10vw 0 75vw;
+    background-color: rgb(26, 21, 34);
+    
+}
+
+
+
+/*---------------MAIN PAGE TEXT AND BUTTON-----------------*/
+
+.myVideo{
+    display:none;
+}
+
+
+/*Exclusive trainer text*/
+.sloganC { 
+    position:absolute;
+    top: 23vh; 
+    left: 60vw;
+    font-family: '28days';
+    font-size: 1.7em;
+    color: white;
+    padding:0px 0px;
+    
+
+}
+
+/*Limited Edition text*/
+.textC { 
+    font-family: 'Lovers Quarrel', cursive, sans-serif;
+/*    display: block;*/
+    text-align: center;
+    color:aliceblue;
+/*    margin: 65vh auto 0 auto;*/
+    top:65vh;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+/*REPEATED CODE*/
+.textC, .buttonC {
+    width:100%;
+    position: absolute;
+}
+
+/*div wrapping around the new arrivals button*/
+.buttonC {
+    top:72vh;
+}
+
+/*New Arrivals button*/
+.newArrivalB {
+    padding: 15px 15px;
+    border-radius: 5px 5px; /*used to round the corners*/
+    
+    color:white;
+    background-color:  rgba(200, 177, 250, 0.20);
+    border: 1px solid rgb(200, 177, 250);
+    text-shadow:  0 0 20px rgb(216, 54, 54);
+    cursor: pointer; /*changes the mouse cursor to a pointer symbol when hovering over it*/
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/*------------STYLING FOR OUR PRODUCT PAGE---------*/
+h1 {
+    font-size: 1.5em;
+    text-transform:uppercase;
+    text-align: center;
+    font-weight:lighter;
+}
+
+h2 {
+    font-size: 1em;
+    text-align: center;
+    font-weight:lighter;
+    
+}
+
+
+.productContainer, .SalesContainer{
+    text-align: center;
+    flex-grow: 1; /*makes the images larger, the fewer the elements in the same row*/
+    width: 100vw;
+    padding: 1vh 3vw;
+}
+
+
+
+/*STYLING FOR ALL OUR BUTTONS ELEMENTS WITHIN PRODUCTS*/
+.addCartB {
+    color: wheat;
+    border-radius: 5px;
+    background-color: rgb(53, 38, 80);
+    padding: 10px 15px; 
+    cursor: pointer;
+    
+}
+
+.addCartB a{
+    color:white;
+    text-decoration: none;
+}
+
+/*Psuedo Selector: inserts content after HTML element*/
+.addCartB:after{
+    /*Entering Unicode characters to our site*/
+    font-family: 'Font Awesome 5 Free';
+    content: "\f07a";
+    font-weight: 900;
+}
+
+figcaption span {
+    font-weight: bold;
+    
+}
+
+/*flexbox layout for Product and sales*/
+.allTrainers {
+    display:flex;       /*enables felxbox layout*/
+    flex-wrap: wrap;    /*wraps the element to the next line*/
+    justify-content: center; /*centers the elements per line*/
+    width: 100%;
+    height: auto;
+    
+}
+
+.allTrainers figcaption {
+    min-height: 60px;
+}
+
+/*----------------LOG IN PAGE--------------*/
+.shopCartBox { /*TO DO*/
+    display:none;
+}
+
+
+.logInPage {
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 0.7em;
+    
+    padding: 50px 30px ;
+    border: 1px solid grey;
+    margin: 10px 20px;
+    
+    
+}
+
+
+.logInPage span{
+    font-weight:bold;
+}
+
+.logInButton, .phoneNum, .email { /*borrow almost all the code from add to cart button excep for padding TODO: merge them later*/
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(53, 38, 80);
+    padding: 5px 7.5px; 
+    cursor: pointer;
+}
+/*---------------------ABOUT PAGE--------------*/
+
+
+
+/*---------------------CONTACT PAGE------------*/
+
+#contactBackground {
+    
+/*    background-image: url(../img/trainerContactBackground.jpg);*/
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9) ), url('../img/trainerContactBackground.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 100vh;
+    
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+
+}
+
+#addressText {
+    
+}
+
+
+
+/* -----------------------------------------------*/
+
+/*------------------MEDIA QUERY-------------------*/
+
+
+/*adjusts the contents if the minimum screen width is 568px*/
+/*This is designed for medium screens*/
+/*problem with this design: android phones do not follow any standardise phone size unlike iphones therefore there is a possibility of the website breaking at certain aspect ratios*/
+
+/*---------------PHONE 568px AND ABOVE------------*/
+@media screen and (min-width:568px){
+    /*Only include what you need to change*/
+    
+    /*Exclusive trainer text*/
+    .sloganC { 
+        left: 65vw;
+    }
+}
+
+
+/*--------------TABLET 768px AND ABOVE------------*/
+@media screen and (min-width:768px){
+    
+    #homeBackground {
+        height:30vh;
+    }
+    
+    /*REPEATED CODE*/
+    .textC, .buttonC, .sloganC{
+        width: auto;
+        left:75vw;
+    }
+    
+    /*Exclusive trainer text*/
+    .sloganC { 
+        font-size:em;
+        top: 10vh; 
+    }
+
+    /*Limited Edition text*/
+    .textC { 
+        top:18vh;
+    }
+
+    /*div wrapping around the "new arrivals" button*/
+    .buttonC {
+        top:23vh;
+    }
+    
+    .productContainer, .SalesContainer{
+        width:25%;
+        flex-grow: 0;
+    }
+    
+
+}
+
+/*--------------DESKTOP 1024px AND ABOVE----------*/
+@media screen and (min-width: 1024px){
+    #homeBackground {
+        height:100vh;
+    }
+    
+    .navBtn, .fa-shopping-basket {
+        display:none;
+    }
+    
+    #navContainer {
+        height:5vh;
+        border: none;
+        text-align: right;
+        padding:1.5vh 0;
+    }
+    
+    nav li a, nav li{
+        width:auto;
+        height:auto;
+        display:inline;
+        
+    }
+    
+    nav li a{
+        text-transform: uppercase;
+        font-size: 1em;
+        letter-spacing: 1px;
+        
+        padding: 15px 10px;
+/*        border: 1px solid red;*/
+        text-align: center;
+        
+        
+    }
+    
+    .menuItems a{
+        padding: 1px 5vw 15px 0;
+        text-align: center;
+        display:inline;
+        width:auto;
+        
+    }
+    
+    .menuItems li{
+        display:inline;
+        border:none;
+    }
+    
+    
+    .menuItems{
+        display:inline;
+    
+        
+    }
+    
+    /*Top left logo*/
+    .logo{
+        position: absolute;
+        width:10%;
+        z-index=115;
+        
+        top:10vh;
+        left:5vw;
+        z-index:90;
+    }
+    
+    /*Exclusive trainer text*/
+    .sloganC { 
+        font-size: 3em;
+        top: 35vh; 
+        left: 70vw;
+        letter-spacing: 5px
+        
+    }
+
+
+    /*Limited Edition text*/
+    .textC { 
+        
+        font-size: 2.5em;
+        letter-spacing: 5px;
+        top:65vh;
+        left:5vw;
+    }
+    
+    /*div wrapping around the new arrivals button*/
+    .buttonC {
+        top:72vh;
+        left:5.5vw;
+    }
+    
+    /*New Arrivals button*/
+    .newArrivalB {
+        font-size:2em;
+        padding: 20px 20px;
+    }
+    
+
+    .shopCartBox { /*TO DO*/
+        display: block;
+        box-sizing:border-box;
+        font-weight: bold;
+        height: 100px;
+        padding:10px 10px;
+        border: 1px solid grey;
+        
+        margin: 10px 20px 50px 20px;
+    } 
+    
+    .aboutVideo {
+        display:inline;
+        width: 50vw;
+        float: left;
+        margin: 0 0px;
+        margin-right: 20px;
+    }
+    
+    #aboutInfo {
+        display:inline;
+/*        float:right;*/
+        
+    }
+    
+    .aboutContainer {
+        margin: 40px 60px 50px;
+        clear:both;
+        
+    }
+    
+    
+    
+
+
+}
+
+/*--------------DESKTOP 1280px AND ABOVE----------*/
+@media screen and (min-width: 1280px){
+    
+    #homeBackground{
+        background-image:none;
+/*        height:70vh;*/
+        
+    }
+    
+    .myVideo{
+        display: inline-block;
+        position:absolute;
+        background-size:cover;
+        top:0;
+        right:0;
+        width:100%;
+        height:auto; 
+        background-attachment:fixed;
+        z-index: -100;
+        
+    }
+    
+    .videoSetup{
+        background: rgba( 0, 0, 0, 0.4); 
+        overflow-y: hidden;
+        height:auto;
+
+        
+    }
+    
+    .buttonC {
+        top:500px;
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
